@@ -6,7 +6,7 @@ document.getElementById("genera-btn").onclick = function ()
     const km = Number(document.getElementById('km').value);
     const age = document.getElementById('age').value;
     document.getElementById('ticket').style.display = "block";
-    
+
     //Prezzo biglietto
     let ticketPrice = km * 0.21;
     
@@ -25,16 +25,16 @@ document.getElementById("genera-btn").onclick = function ()
     document.getElementById('cp').innerHTML = codice;
 
     //Calcolo prezzo
-    if(userAge === "Minorenne"){
+    if(userAge == 2){
         let priceUnderAge = ticketPrice - (ticketPrice * 0.2);
-        document.getElementById('price').innerHTML = priceUnderAge.toFixed(2);
+        document.getElementById('price').innerHTML = priceUnderAge.toFixed(2) + "€";
     }
-    else if(userAge === "Over 65")
+    else if(userAge == 3)
     {
         let priceOverAge = ticketPrice - (ticketPrice * 0.4);
-        document.getElementById('price').innerHTML = priceOverAge.toFixed(2);
+        document.getElementById('price').innerHTML = priceOverAge.toFixed(2) + "€";;
     }
     else{
-        document.getElementById('price').innerHTML = ticketPrice.toFixed(2);
+        document.getElementById('price').innerHTML = ticketPrice.toFixed(2) + "€";
     }
 };
